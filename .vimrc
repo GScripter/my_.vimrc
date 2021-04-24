@@ -3,6 +3,9 @@ syntax on
 set nowrap
 set encoding=utf8
 
+" Meu
+echom ">^.^<"
+
 """" START Vundle Configuration 
 
 " Disable file type for vundle
@@ -103,6 +106,8 @@ Plugin 'atelierbram/Base2Tone-vim'
 Plugin 'colepeters/spacemacs-theme.vim'
 Plugin 'wakatime/vim-wakatime'
 Plugin 'loremipsum'
+Plugin 'mattn/emmet-vim'
+Plugin 'tpope/vim-surround'
 
 " OSX stupid backspace fix
 set backspace=indent,eol,start
@@ -320,8 +325,18 @@ let g:fzf_history_dir = '~/.local/share/fzf-history'
 """""""""""""""""""""""""""""""""""""
 " Mappings configurationn
 """""""""""""""""""""""""""""""""""""
+
 map <C-n> :NERDTreeToggle<CR>
 map <C-m> :TagbarToggle<CR>
+" Meu
+let mapleader = "-"
+noremap <space> gt
+nmap + ilorem<c-y>,<esc>o<esc>
+inoremap <c-u> <esc>veUi
+nnoremap <c-u> veU
+nmap <leader>e :term<CR>
+nnoremap <leader>ev :split $MYVIMRC<CR>
+nnorema <leader>sv :source $MYVIMRC<CR>
 
 " Omnicomplete Better Nav
 inoremap <expr> <c-j> ("\<C-n>")
@@ -386,5 +401,3 @@ inoremap <expr> <c-x><c-k> fzf#vim#complete#word({'left': '15%'})
 " Vim-Alchemist Mappings
 autocmd FileType elixir nnoremap <buffer> <leader>h :call alchemist#exdoc()<CR>
 autocmd FileType elixir nnoremap <buffer> <leader>d :call alchemist#exdef()<CR>
-
-
