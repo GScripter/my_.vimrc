@@ -48,15 +48,22 @@ set number
 set cursorline
 set  clipboard=unnamedplus
 colorscheme happy_hacking
+set tabstop=2 expandtab shiftwidth=2
+
+
 
 """"""""""""""""""""""""""""""""""
 " Mappings Configuration
 """"""""""""""""""""""""""""""""""
 let mapleader = "-"
 
-nmap <c-n> :NERDTreeToggle<CR>
 nnoremap <space> gt
 nmap <leader>t :term<CR>
-nmap <leader>p :OpenBrowserSearch 
 nmap + ilorem<c-y>,<enter><esc>
 nnoremap <leader>ev :split $MYVIMRC<CR>
+
+" Plugin Mappings 
+nmap <c-i> :IndentLinesToggle<CR>
+nmap <leader>p :OpenBrowserSearch 
+nmap <c-n> :NERDTreeToggle<CR>
+
