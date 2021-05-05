@@ -26,7 +26,10 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'mattn/emmet-vim'
 Plugin 'tpope/vim-surround'
 Plugin 'tyru/open-browser.vim'
-
+Plugin 'townk/vim-autoclose'
+Plugin 'HTML-AutoCloseTag'
+Plugin 'johngrib/vim-game-snake'
+Plugin 'scrooloose/nerdcommenter'
 
 " Interface
 Plugin 'vim-airline/vim-airline'
@@ -50,6 +53,14 @@ set  clipboard=unnamedplus
 colorscheme happy_hacking
 set tabstop=2 expandtab shiftwidth=2
 
+" NerdCommenter
+filetype plugin on
+let g:NERDSpaceDelims = 1
+let g:NERDAltDelims_python = 1
+map ci <Plug>NERDCommenterInvert
+map cs <Plug>NERDCommenterSexy
+map c$ <Plug>NERDCommenterToEOL
+
 
 
 """"""""""""""""""""""""""""""""""
@@ -57,13 +68,21 @@ set tabstop=2 expandtab shiftwidth=2
 """"""""""""""""""""""""""""""""""
 let mapleader = "-"
 
+" Open Terminal
+nmap <leader>t :below term<CR>
+nmap <leader>tt :term<CR>
+nmap <leader>td :below vert term<CR>
+
 nnoremap <space> gt
-nmap <leader>t :term<CR>
 nmap + ilorem<c-y>,<enter><esc>
 nnoremap <leader>ev :split $MYVIMRC<CR>
+inoremap bd /
 
 " Plugin Mappings 
 nmap <c-i> :IndentLinesToggle<CR>
-nmap <leader>p :OpenBrowserSearch 
 nmap <c-n> :NERDTreeToggle<CR>
+
+nmap <leader>d :OpenBrowserSearch 
+map <leader>l <Plug>(openbrowser-open)
+map <leader>b <Plug>(openbrowser-search)
 
