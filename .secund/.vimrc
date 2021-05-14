@@ -47,7 +47,11 @@ filetype plugin indent on          " required
 " Configuration Section
 """"""""""""""""""""""""""""""""""
 syntax on
+set encoding=utf8
+set spelllang=pt,en
+set spell
 set number
+set nowrap
 set cursorline
 set  clipboard=unnamedplus
 colorscheme happy_hacking
@@ -67,16 +71,19 @@ map c$ <Plug>NERDCommenterToEOL
 " Mappings Configuration
 """"""""""""""""""""""""""""""""""
 let mapleader = "-"
+let maplocalleader = ","
 
 " Open Terminal
 nmap <leader>t :below term<CR>
 nmap <leader>tt :term<CR>
-nmap <leader>td :below vert term<CR>
+nmap <leader>tv :below vert term<CR>
 
 nnoremap <space> gt
 nmap + ilorem<c-y>,<enter><esc>
 nnoremap <leader>ev :split $MYVIMRC<CR>
-inoremap bd /
+inoremap <c-a> ã
+inoremap <c-c> ç
+inoremap <c-e> ê
 
 " Plugin Mappings 
 nmap <c-i> :IndentLinesToggle<CR>
@@ -85,4 +92,5 @@ nmap <c-n> :NERDTreeToggle<CR>
 nmap <leader>d :OpenBrowserSearch 
 map <leader>l <Plug>(openbrowser-open)
 map <leader>b <Plug>(openbrowser-search)
+
 
