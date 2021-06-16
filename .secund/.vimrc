@@ -36,6 +36,8 @@ Plugin 'vim-airline/vim-airline'
 Plugin 'rafi/awesome-vim-colorschemes'
 Plugin 'mhinz/vim-startify'
 Plugin 'yggdroot/indentline'
+Plugin 'enricobacis/vim-airline-clock'
+Plugin 'justincampbell/vim-eighties'
 
 
 call vundle#end()                  " required
@@ -56,6 +58,7 @@ set cursorline
 set  clipboard=unnamedplus
 colorscheme happy_hacking
 set tabstop=2 expandtab shiftwidth=2
+set ignorecase
 
 " NerdCommenter
 filetype plugin on
@@ -71,7 +74,6 @@ map c$ <Plug>NERDCommenterToEOL
 " Mappings Configuration
 """"""""""""""""""""""""""""""""""
 let mapleader = "-"
-let maplocalleader = ","
 
 " Open Terminal
 nmap <leader>t :below term<CR>
@@ -79,11 +81,17 @@ nmap <leader>tt :term<CR>
 nmap <leader>tv :below vert term<CR>
 
 nnoremap <space> gt
+nnoremap <left> <c-w>h
+nnoremap <right> <c-w>l
+nnoremap <down> <c-w>j
+nnoremap <up> <c-w>k
 nmap + ilorem<c-y>,<enter><esc>
 nnoremap <leader>ev :split $MYVIMRC<CR>
+nnoremap <leader>o O<esc>O<esc>
 inoremap <c-a> ã
 inoremap <c-c> ç
 inoremap <c-e> ê
+inoremap <c-u> ú
 
 " Plugin Mappings 
 nmap <c-i> :IndentLinesToggle<CR>
@@ -92,5 +100,15 @@ nmap <c-n> :NERDTreeToggle<CR>
 nmap <leader>d :OpenBrowserSearch 
 map <leader>l <Plug>(openbrowser-open)
 map <leader>b <Plug>(openbrowser-search)
+
+
+
+""""""""""""""""""""""""""""""""""
+" TESTS
+""""""""""""""""""""""""""""""""""
+autocmd BufNewFile * :w
+autocmd BufWritePre *.html :normal gg=G
+autocmd FileType python nnoremap . ggVG
+
 
 
