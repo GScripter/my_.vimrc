@@ -30,6 +30,7 @@ Plugin 'townk/vim-autoclose'
 Plugin 'HTML-AutoCloseTag'
 Plugin 'johngrib/vim-game-snake'
 Plugin 'scrooloose/nerdcommenter'
+Plugin 'davidhalter/jedi-vim'
 
 " Interface
 Plugin 'vim-airline/vim-airline'
@@ -67,6 +68,10 @@ let g:NERDAltDelims_python = 1
 map ci <Plug>NERDCommenterInvert
 map cs <Plug>NERDCommenterSexy
 map c$ <Plug>NERDCommenterToEOL
+
+" jedi
+let g:jedi#use_splits_not_buffers = "right"
+autocmd FileType python setlocal completeopt-=preview
 
 
 
