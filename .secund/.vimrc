@@ -4,7 +4,8 @@
 " | | | |  | |  |  ___|  | |       https://github.com/GabrielSantos198/
 " | |_| |  | |  | |___   | |____   
 " \_____/  |_|  |_____|  |______|  
-"
+" pip install jedi
+' pip install Pillow
 
 
 
@@ -31,6 +32,7 @@ Plugin 'HTML-AutoCloseTag'
 Plugin 'johngrib/vim-game-snake'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'davidhalter/jedi-vim'
+Plugin 'ashisha/image.vim'
 
 " Interface
 Plugin 'vim-airline/vim-airline'
@@ -92,7 +94,9 @@ nnoremap <down> <c-w>j
 nnoremap <up> <c-w>k
 nmap + ilorem<c-y>,<enter><esc>
 nnoremap <leader>ev :split $MYVIMRC<CR>
-nnoremap <leader>o O<esc>O<esc>
+nnoremap <leader>o O<esc>O<esc>O
+inoremap <F7> <esc>:w<CR>
+nnoremap <F7> :w<CR>
 inoremap <c-a> ã
 inoremap <c-c> ç
 inoremap <c-e> ê
