@@ -5,7 +5,7 @@
 " | |_| |  | |  | |___   | |____   
 " \_____/  |_|  |_____|  |______|  
 " pip install jedi
-' pip install Pillow
+" pip install Pillow
 
 
 
