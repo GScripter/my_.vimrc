@@ -115,9 +115,9 @@ map <leader>b <Plug>(openbrowser-search)
 """"""""""""""""""""""""""""""""""
 " TESTS
 """"""""""""""""""""""""""""""""""
-autocmd BufNewFile * :w
-autocmd BufWritePre *.html :normal gg=G
-autocmd FileType python nnoremap . ggVG
+" autocmd BufNewFile * :w
+" autocmd BufWritePre *.html :normal gg=G
+" autocmd FileType python nnoremap . ggVG
 
 
 
