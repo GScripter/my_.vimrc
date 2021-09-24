@@ -19,7 +19,8 @@
 
 
 """" START Vundle Configuration
-                                                                                                                                                               " Disable file type for vundle
+
+" Disable file type for vundle
 filetype off                  " required
 
 " set the runtime path to include Vundle and initialize
@@ -40,14 +41,17 @@ Plugin 'scrooloose/nerdcommenter'
 Plugin 'davidhalter/jedi-vim'
 Plugin 'ashisha/image.vim'
 Plugin 'kshenoy/vim-signature'
+Plugin 'dhruvasagar/vim-table-mode'
 
 " Interface
 Plugin 'vim-airline/vim-airline'
 Plugin 'rafi/awesome-vim-colorschemes'
+Plugin 'w0ng/vim-hybrid'
 Plugin 'mhinz/vim-startify'
 Plugin 'yggdroot/indentline'
 Plugin 'enricobacis/vim-airline-clock'
 Plugin 'rrethy/vim-illuminate'
+
 
 call vundle#end()                  " required
 filetype plugin indent on          " required
@@ -59,14 +63,15 @@ filetype plugin indent on          " required
 " CONFIGURATION SECTION
 """"""""""""""""""""""""""""""""""
 syntax on
-set encoding=utf8
+set encoding=UTF-8
 set spelllang=pt,en
 set spell
 set number
 set nowrap
 set cursorline
 set clipboard=unnamedplus
-colorscheme happy_hacking
+set background=dark
+colorscheme hybrid
 set tabstop=2 expandtab shiftwidth=2
 set ignorecase
 
@@ -81,6 +86,7 @@ autocmd FileType python setlocal completeopt-=preview
 
 " vim-illuminate
 let g:Illuminate_delay = 500
+let g:Illuminate_ftblacklist = ['nerdtree']
 
 
 
