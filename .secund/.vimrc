@@ -42,6 +42,8 @@ Plugin 'davidhalter/jedi-vim'
 Plugin 'ashisha/image.vim'
 Plugin 'kshenoy/vim-signature'
 Plugin 'dhruvasagar/vim-table-mode'
+Plugin 'lilydjwg/colorizer'
+Plugin 'othree/html5.vim'
 
 " Interface
 Plugin 'vim-airline/vim-airline'
@@ -51,6 +53,9 @@ Plugin 'mhinz/vim-startify'
 Plugin 'yggdroot/indentline'
 Plugin 'enricobacis/vim-airline-clock'
 Plugin 'rrethy/vim-illuminate'
+Plugin 'pangloss/vim-javascript'
+Plugin 'vim-python/python-syntax'
+Plugin 'tadaa/vimade'
 
 
 call vundle#end()                  " required
@@ -67,12 +72,13 @@ set encoding=UTF-8
 set spelllang=pt,en
 set spell
 set number
+set relativenumber
 set nowrap
 set cursorline
 set clipboard=unnamedplus
 set background=dark
-colorscheme hybrid
-set tabstop=2 expandtab shiftwidth=2
+colorscheme happy_hacking
+set tabstop=4 expandtab shiftwidth=4
 set ignorecase
 
 " NerdCommenter
@@ -87,6 +93,19 @@ autocmd FileType python setlocal completeopt-=preview
 " vim-illuminate
 let g:Illuminate_delay = 500
 let g:Illuminate_ftblacklist = ['nerdtree']
+
+" NERDTree
+autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
+
+" pythonsyntax
+let g:python_highlight_all = 1
+
+" colorizer
+let g:colorizer_maxlines = 1000
+
+" vimade
+let g:vimade = {}
+let g:vimade.fadelevel = 0.2
 
 
 
@@ -110,6 +129,7 @@ nnoremap <leader>ev :split $MYVIMRC<CR>
 nnoremap <leader>o O<esc>O<esc>O
 inoremap <F7> <esc>:w<CR>
 nnoremap <F7> :w<CR>
+inoremap <F2> <c-x><c-o>
 inoremap <c-a> ã
 inoremap <c-c> ç
 inoremap <c-e> ê
@@ -134,17 +154,14 @@ map c$ <Plug>NERDCommenterToEOL
 """"""""""""""""""""""""""""""""""
 " ABBREVIATES
 """"""""""""""""""""""""""""""""""
-ab :robo: 🤖
-ab :sorriso: 😂
-ab :polegar: 👍
-ab :cobra: 🐍
-ab :pinguim: 🐧
-ab :cocô: 💩
-ab :sono: 😴
-ab :vinho: 🍷
-ab :fogo: 🔥
-ab :lampada: 💡
-ab :tristeza: 😭
+ab :hands: 🙏
+ab :smile: 😂
+ab :cool: 👍
+ab :snake: 🐍
+ab :sleeping: 😴
+ab :wine: 🍷
+ab :fire: 🔥
+ab :lamp: 💡
 
 
 
@@ -154,3 +171,4 @@ ab :tristeza: 😭
 " autocmd BufNewFile * :w
 " autocmd BufWritePre *.html :normal gg=G
 " autocmd FileType python nnoremap . ggVG
+
