@@ -39,6 +39,7 @@ Plugin 'HTML-AutoCloseTag'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'kshenoy/vim-signature'
 Plugin 'dhruvasagar/vim-table-mode'
+Plugin 'sotte/presenting.vim'
 Plugin 'othree/html5.vim'
 Plugin 'w0rp/ale'
 
@@ -48,6 +49,7 @@ Plugin 'mhinz/vim-startify'
 Plugin 'ryanoasis/vim-devicons'
 Plugin 'yggdroot/indentline'
 Plugin 'rrethy/vim-illuminate'
+Plugin 'hynek/vim-python-pep8-indent'
 
 
 call vundle#end()                  " required
@@ -85,9 +87,6 @@ let g:Illuminate_ftblacklist = ['nerdtree']
 " NERDTree
 autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
 
-" pythonsyntax
-let g:python_highlight_all = 1
-
 " Ale
 let b:ale_linters = {'python': ['pylint', 'flake8']}
 
@@ -106,7 +105,7 @@ nnoremap <left> <c-w>h
 nnoremap <right> <c-w>l
 nnoremap <down> <c-w>j
 nnoremap <up> <c-w>k
-nnoremap <leader>ev :split $MYVIMRC<CR>
+nnoremap <leader>ev :vsplit $MYVIMRC<CR>
 nnoremap <leader>o O<esc>O<esc>O
 inoremap <F7> <esc>:w<CR>
 nnoremap <F7> :w<CR>
@@ -129,6 +128,8 @@ map c$ <Plug>NERDCommenterToEOL
 
 nnoremap <leader>l :ALEToggle<CR>
 
+nnoremap <F5> :PresentingStart<CR>
+
 
 """"""""""""""""""""""""""""""""""
 " ABBREVIATES
@@ -146,4 +147,5 @@ ab _email gabrielsantana9807@gmail.com
 " autocmd BufNewFile * :w
 " autocmd BufWritePre *.html :normal gg=G
 " autocmd FileType python nnoremap . ggVG
+autocmd BufEnter *.png,*.jpg,*.jpeg,*.gif exec "!/data/data/com.termux/files/usr/bin/termimage ".expand("%") | :bw
 
