@@ -39,10 +39,12 @@ Plugin 'HTML-AutoCloseTag'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'kshenoy/vim-signature'
 Plugin 'dhruvasagar/vim-table-mode'
-Plugin 'sotte/presenting.vim'
 Plugin 'othree/html5.vim'
 Plugin 'w0rp/ale'
 Plugin 'turbio/bracey.vim'
+Plugin 'junegunn/vim-emoji'
+Plugin 'kabbamine/vcoolor.vim'
+Plugin 'shime/vim-livedown'
 
 " Interface
 Plugin 'rafi/awesome-vim-colorschemes'
@@ -53,6 +55,7 @@ Plugin 'rrethy/vim-illuminate'
 Plugin 'hynek/vim-python-pep8-indent'
 Plugin 'ap/vim-css-color'
 Plugin 'vim-airline/vim-airline'
+Plugin 'ctrlpvim/ctrlp.vim'
 
 call vundle#end()                  " required
 filetype plugin indent on          " required
@@ -72,12 +75,13 @@ set nowrap
 set cursorline
 set background=dark
 colorscheme afterglow
-set tabstop=2 expandtab shiftwidth=2
+set tabstop=4 expandtab shiftwidth=4
 set ignorecase
 set incsearch
 set smarttab
 set completeopt-=preview
 set updatetime=250
+set completefunc=emoji#complete
 
 " Live external modifications
 set autoread
@@ -110,26 +114,23 @@ function! NERDTreeHighlightFile(extension, fg)
   autocmd FileType nerdtree syntax match hideBracketsInNerdTree "\]" contained conceal containedin=ALL
 endfunction
 
-call NERDTreeHighlightFile('py', '179')
+call NERDTreeHighlightFile('py', '226')
 call NERDTreeHighlightFile('js', '226')
 call NERDTreeHighlightFile('Procfile', '177')
-call NERDTreeHighlightFile('html', '242')
+call NERDTreeHighlightFile('.vimrc', '150')
+call NERDTreeHighlightFile('html', '160')
 call NERDTreeHighlightFile('css', '74')
 call NERDTreeHighlightFile('scss', '179')
 call NERDTreeHighlightFile('png', '205')
 call NERDTreeHighlightFile('jpg', '205')
 call NERDTreeHighlightFile('jpeg', '205')
-highlight NERDTreeFlags ctermfg=148
-highlight NERDTreeDIR ctermfg=148
-highlight NERDTreeCWD ctermfg=74
+highlight NERDTreeFlags ctermfg=60
+highlight NERDTreeDIR ctermfg=152 cterm=bold
+highlight NERDTreeCWD ctermfg=60 cterm=bold
 
 highlight SpellBad ctermfg=15 ctermbg=1
 highlight illuminatedWord cterm=underline ctermbg=236
 " Show colors :hi
-
-
-" Ale
-let b:ale_linters = {'python': ['pylint', 'flake8']}
 
 
 """"""""""""""""""""""""""""""""""
@@ -157,6 +158,8 @@ nnoremap <F5> :set paste!<CR>
 nmap <c-i> :IndentLinesToggle<CR>
 nmap <c-n> :NERDTreeToggle<CR>
 
+noremap <c-c> :VCoolor<CR>
+
 nnoremap <c-m> :SignatureToggle<CR>
 
 map ci <Plug>NERDCommenterInvert
@@ -164,8 +167,6 @@ map cs <Plug>NERDCommenterSexy
 map c$ <Plug>NERDCommenterToEOL
 
 nnoremap <leader>l :ALEToggle<CR>
-
-nnoremap <F6> :PresentingStart<CR>
 
 noremap <F7> :BraceyReload<CR>
 noremap <F8> :Bracey<CR>
