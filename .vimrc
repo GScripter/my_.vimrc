@@ -158,7 +158,11 @@ nnoremap <F5> :set paste!<CR>
 nmap <c-i> :IndentLinesToggle<CR>
 nmap <c-n> :NERDTreeToggle<CR>
 
-noremap <c-c> :VCoolor<CR>
+" Color Picker
+noremap <c-l> :VCoolor<CR>
+noremap <c-b> :VCoolIns r<CR>
+noremap <c-a> :VCoolIns ra<CR>
+let g:vcoolor_disable_mappings = 1
 
 nnoremap <c-m> :SignatureToggle<CR>
 
@@ -181,7 +185,7 @@ ab github! https://github.com/GabrielSantos198
 ab linkedin! https://www.linkedin.com/in/gabrielsantana444
 ab email! gabrielsantana9807@gmail.com 
 ab site! https://gabrielsantana.online
-ab css! *, *:after, *:before{<cr>  margin: 0;<cr>  padding: 0;<cr>  border: 0;<cr>  box-sizing: border-box;<cr>  text-decoration: none;<cr>}<enter>
+ab css! *, *:after, *:before{<cr>  margin: 0;<cr>  padding: 0;<cr> box-sizing: border-box;<cr>  text-decoration: none;<cr>}<enter>
 
 
 """"""""""""""""""""""""""""""""""

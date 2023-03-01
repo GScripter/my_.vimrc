@@ -2,8 +2,8 @@
 __This file contains all my editor settings, plugins and mappings.__
 
 ## Requirements:
-```
-sudo apt install termimage
-pip install pylint
-pip install flake8`
-```
+
+pylint<br/>
+flake8<br/>
+eslint<br/>
+zenity
