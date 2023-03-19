@@ -55,7 +55,6 @@ Plugin 'rrethy/vim-illuminate'
 Plugin 'hynek/vim-python-pep8-indent'
 Plugin 'ap/vim-css-color'
 Plugin 'vim-airline/vim-airline'
-Plugin 'ctrlpvim/ctrlp.vim'
 
 call vundle#end()                  " required
 filetype plugin indent on          " required
@@ -159,9 +158,9 @@ nmap <c-i> :IndentLinesToggle<CR>
 nmap <c-n> :NERDTreeToggle<CR>
 
 " Color Picker
-noremap <c-l> :VCoolor<CR>
-noremap <c-b> :VCoolIns r<CR>
-noremap <c-a> :VCoolIns ra<CR>
+noremap <leader>x :VCoolor<CR>
+noremap <leader>b :VCoolIns r<CR>
+noremap <leader>a :VCoolIns ra<CR>
 let g:vcoolor_disable_mappings = 1
 
 nnoremap <c-m> :SignatureToggle<CR>
@@ -196,4 +195,5 @@ ab css! *, *:after, *:before{<cr>  margin: 0;<cr>  padding: 0;<cr> box-sizing: b
 " autocmd FileType python nnoremap . ggVG
 autocmd BufEnter *.png,*.jpg,*.jpeg,*.gif exec "!/bin/feh ".expand("%") | :bw
 autocmd CursorHold,CursorHoldI * update 
+" let g:startify_language = 'pt-br'
 
